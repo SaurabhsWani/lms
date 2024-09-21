@@ -39,7 +39,7 @@ public class MemberController {
 	}
 
 	@GetMapping("/member/{id}")
-	public String getEditMemberForm(Model model, @PathVariable("id") Long id) {
+	public String getEditMemberForm(Model model, @PathVariable Long id) {
 		Optional<Member> member = repository.findById(id);
 		if (member.isPresent()) {
 			model.addAttribute("member", member);
